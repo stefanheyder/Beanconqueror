@@ -34,6 +34,8 @@ import {PreparationsAddModal} from '../pages/preparations/add/preparations-add';
 import {PreparationsEditModal} from '../pages/preparations/edit/preparations-edit';
 
 import {BrewsAddModal} from '../pages/brews/add/brews-add';
+import {BrewsAddPagingModal} from '../pages/brews/add/brews-add-paging';
+
 import {BrewsEditModal} from '../pages/brews/edit/brews-edit';
 import {BrewsDetailsModal} from '../pages/brews/details/brews-details';
 import {BrewsTableModal} from '../pages/brews/table/brews-table';
@@ -77,7 +79,7 @@ import {TimerComponent} from '../components/timer/timer';
     ToDecimalPipe,
     PreventCharacterDirective,
     BrewsPage,
-    BrewsAddModal, TimerComponent, BrewsEditModal,BrewsPhotoView,BrewsDetailsModal,BrewsTableModal,BrewsPopover,
+    BrewsAddModal, BrewsAddPagingModal, TimerComponent, BrewsEditModal,BrewsPhotoView,BrewsDetailsModal,BrewsTableModal,BrewsPopover,
     AboutPage, ContactPage, LicencesPage
   ],
 
@@ -105,7 +107,7 @@ import {TimerComponent} from '../components/timer/timer';
     PreparationsPage,
     PreparationsAddModal,
     PreparationsEditModal,
-    BrewsPage, BrewsAddModal, TimerComponent, BrewsEditModal,BrewsPhotoView,BrewsDetailsModal,BrewsTableModal,BrewsPopover,
+    BrewsPage, BrewsAddModal, BrewsAddPagingModal, TimerComponent, BrewsEditModal,BrewsPhotoView,BrewsDetailsModal,BrewsTableModal,BrewsPopover,
     AboutPage, ContactPage, LicencesPage,
   ],
   providers: [

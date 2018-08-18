@@ -26,10 +26,10 @@ import {ISettings} from '../../../interfaces/settings/iSettings';
 import {BREW_QUANTITY_TYPES_ENUM} from '../../../enums/brews/brewQuantityTypes';
 
 @Component({
-  selector: 'brews-add',
-  templateUrl: 'brews-add.html',
+  selector: 'brews-add-paging',
+  templateUrl: 'brews-add-paging.html',
 })
-export class BrewsAddModal {
+export class BrewsAddPagingModal {
   @ViewChild('photoSlides') photoSlides: Slides;
   @ViewChild(TimerComponent) timer: TimerComponent;
 
@@ -58,6 +58,10 @@ export class BrewsAddModal {
     //Get first entry
     this.data.bean = this.beans[0].config.uuid;
     this.data.method_of_preparation = this.method_of_preparations[0].config.uuid;
+
+
+
+
   }
 
   ionViewDidEnter(){
@@ -69,6 +73,7 @@ export class BrewsAddModal {
       let brews: Array<Brew> = this.uiBrewStorage.getAllEntries();
       if (brews.length > 0) {
         let lastBrew: Brew = brews[brews.length - 1];
+
 
         if (this.settings.default_last_coffee_parameters.bean_type===true){
           this.data.bean = lastBrew.bean;

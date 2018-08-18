@@ -31,7 +31,7 @@
       <ion-label>Ansicht</ion-label>
       <ion-select [(ngModel)]="settings.brew_view" (ngModelChange)="saveSettings($event)">
         <ion-option value="{{BREW_VIEWS.SINGLE_PAGE}}">Eine Seite</ion-option>
-        <ion-option value="{{BREW_VIEWS.MULTIPLE_PAGE}}" disabled>Paging</ion-option>
+        <ion-option value="{{BREW_VIEWS.MULTIPLE_PAGE}}">Paging</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>

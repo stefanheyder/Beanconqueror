@@ -5,6 +5,9 @@ import {PopoverController, NavParams} from 'ionic-angular';
 import {ModalController, AlertController} from 'ionic-angular';
 
 
+/**Enums**/
+import {BREW_VIEW_ENUM} from '../../enums/settings/brewView';
+
 /**Services**/
 import {UIBrewStorage} from '../../services/uiBrewStorage';
 import {UIBeanStorage} from '../../services/uiBeanStorage';
@@ -25,6 +28,7 @@ import {BrewsPopover} from '../brews/popover/brews-popover';
 
 /**Modals**/
 import {BrewsAddModal} from '../brews/add/brews-add';
+import {BrewsAddPagingModal} from '../brews/add/brews-add-paging';
 import {BrewsEditModal} from '../brews/edit/brews-edit';
 import {BrewsDetailsModal} from '../brews/details/brews-details';
 
@@ -43,6 +47,7 @@ export class BrewsPage {
 
   public hasBeans: boolean = false;
   public hasPreparationMethods: boolean = false;
+  public BREW_VIEW_ENUM = BREW_VIEW_ENUM;
 
   constructor(private modalCtrl: ModalController, private uiBrewStorage: UIBrewStorage,
               private changeDetectorRef: ChangeDetectorRef, private uiAlert: UIAlert,
@@ -220,11 +225,19 @@ export class BrewsPage {
   }
 
   public addBrew() {
-    let addBrewsModal = this.modalCtrl.create(BrewsAddModal, {});
-    addBrewsModal.onDidDismiss(() => {
-      this.loadBrews();
-    });
-    addBrewsModal.present({animate: false});
+    if (this.BREW_VIEW_ENUM){ //MULTIPLE_PAGE
+      let addBrewsModal = this.modalCtrl.create(BrewsAddPagingModal, {});
+      addBrewsModal.onDidDismiss(() => {
+        this.loadBrews();
+      });
+      addBrewsModal.present({animate: false});
+    } else { //SINGLE_PAGE
+      let addBrewsModal = this.modalCtrl.create(BrewsAddModal, {});
+      addBrewsModal.onDidDismiss(() => {
+        this.loadBrews();
+      });
+      addBrewsModal.present({animate: false});
+    }
   }
 
 

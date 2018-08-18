@@ -8,11 +8,16 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content>
-    <ion-item *ngIf="settings.grind_size === true">
-      <ion-label floating>Mahlgrad</ion-label>
-      <ion-input type="text" [(ngModel)]="data.grind_size"></ion-input>
-    </ion-item>
+<ion-content padding>
+  <ion-slides pager>
+    <ion-slide *ngIf="settings.grind_size === true">
+      <ion-content style="height: 400px; margin-left: auto; margin-right: auto;">
+        <h1>Mahlgrad</h1>
+        <ion-input type="text" style="width: 30%;" [(ngModel)]="data.grind_size"></ion-input>
+      </ion-content>
+    </ion-slide>      
+  </ion-slides>
+
     <ion-item *ngIf="settings.grind_weight === true">
       <ion-label floating>Gewicht</ion-label>
       <ion-input [prevent-characters] [(ngModel)]="data.grind_weight" type="text"></ion-input>

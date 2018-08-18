@@ -1,0 +1,11 @@
+brews-add-paging {
+  ion-slide {
+    align-items: start !important;
+    overflow: scroll;
+  }
+
+  .brew-image {
+    max-width: 50%;
+    max-height: 200px;
+  }
+}
